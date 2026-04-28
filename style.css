@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    padding: 10px;
+    z-index: 10;
+    position: relative;
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 20px #ff6b6b, 0 0 40px #ff6b6b;
+    animation: glow 2s ease-in-out infinite alternate;
+    margin-bottom: 8px;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff6b6b, 0 0 30px #ff6b6b;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff1493, 0 0 40px #ff1493;
+    }
+}
+
+.brother-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    object-fit: cover;
+    margin: 8px auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.cake {
+    font-size: 100px;
+    margin: 30px 0;
+    animation: bounce 1s infinite;
+    display: inline-block;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.birthday-video {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    margin: 15px 0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 5px solid #fff;
+}
+
+.message {
+    font-size: 1.5rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    min-height: 100px;
+}
+
+button {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.6);
+    transition: 0.3s;
+    font-family: 'Cairo', Arial, sans-serif;
+    font-weight: 700;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ff1493;
+}
+
+/* بلالين */
+.balloon {
+    position: fixed;
+    bottom: -100px;
+    font-size: 50px;
+    animation: rise 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rise {
+    to {
+        bottom: 110vh;
+        transform: translateX(50px) rotate(360deg);
+    }
+}
+
+/* قصاصات ورق */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #f0f;
+    top: -10px;
+    animation: confetti-fall 5s linear infinite;
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
+
+/* موبايل */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .brother-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .cake {
+        font-size: 80px;
+    }
+
+    .message {
+        font-size: 1.2rem;
+    }
+}
